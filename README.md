@@ -8,3 +8,15 @@ At the moment, this only works with my [fork][1] of dvtm, which only works on OS
 (probably, I might forget to update this README though).
 
 [1]: https://github.com/dpzmick/dvtm
+
+The plugin only defines a couple of commands, any keybindings you might want you
+will have to setup yourself
+
+example:
+
+```
+nnoremap <silent> <C-h> :DvtmNavigateLeft<cr>
+nnoremap <silent> <C-j> :DvtmNavigateDown<cr>
+nnoremap <silent> <C-k> :DvtmNavigateUp<cr>
+nnoremap <silent> <C-l> :DvtmNavigateRight<cr>
+```
