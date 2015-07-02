@@ -12,7 +12,7 @@ endfunction
 
 function! s:DvtmNavigate(direction, dvtmcmd)
     let previous_winnr = winnr()
-    call s:VimNavigate(wincmd)
+    call s:VimNavigate(a:direction)
     if previous_winnr == winnr()
         call system( "echo " . a:dvtmcmd . " > " . $DVTM_CMD_FIFO )
         redraw!
@@ -28,6 +28,6 @@ function! s:DvtmOrSplitSwitch(direction, dvtmcmd)
 endfunction
 
 command! DvtmNavigateLeft     call <SID>DvtmOrSplitSwitch('h', 'focusleft')
-command! DvtmNavigateDown     call <SID>DvtmOrSplitSwitch('j', 'focusdown')
+command! DvtmNavigateRight    call <SID>DvtmOrSplitSwitch('l', 'focusright')
 command! DvtmNavigateUp       call <SID>DvtmOrSplitSwitch('k', 'focusup')
 command! DvtmNavigateDown     call <SID>DvtmOrSplitSwitch('j', 'focusdown')
