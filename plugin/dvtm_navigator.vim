@@ -1,5 +1,5 @@
 if exists('$DVTM') && exists('$DVTM_CMD_FIFO')
-    function! DvtmOrSplitSwitch(wincmd, dvtmcmd)
+    function! s:DvtmOrSplitSwitch(wincmd, dvtmcmd)
         let previous_winnr = winnr()
         silent! execute "wincmd " . a:wincmd
         if previous_winnr == winnr()
